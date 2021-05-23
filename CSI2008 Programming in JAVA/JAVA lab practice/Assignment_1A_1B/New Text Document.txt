@@ -1,0 +1,58 @@
+package com.company;
+
+public class Hyundai {
+    String model;        /* baleno, ciaz, s-cross, xl-6 */
+    String color;        /* red, blue, white, black */
+    String engine_type;  /* Automatic, Automated Manual Transmission(AMT), Manual */
+    String fuel_type;    /* petrol, diesel */
+    int unit_price;      /* price of the car from the factory */
+    int payment;        /* payment made by the customer */
+
+                            /*Parameterized constructor*/
+    Hyundai(String fact_model,String fact_color, String fact_engine_type, String fact_fuel_type,int fact_unit_price) {
+        this.model = fact_model;
+        this.color = fact_color;
+        this.engine_type = fact_engine_type;
+        this.fuel_type = fact_fuel_type;
+        this.unit_price = fact_unit_price;
+    }
+
+                            /*Parameterized constructor*/
+    Hyundai(String user_model,String user_color, String user_engine_type, String user_fuel_type) {
+        this.model = user_model;
+        this.color = user_color;
+        this.engine_type = user_engine_type;
+        this.fuel_type = user_fuel_type;
+    }
+
+                                /*Default constructor*/
+    Hyundai() {
+
+
+        }
+
+    static void Authorize(int payment,int unit_price,int stocks,int stock_availability) {
+        if (payment>=(unit_price*0.5)) {
+            System.out.println("Sales order is approved");
+            Order_processing(stock_availability,stocks);
+        }
+    }
+
+    static void Order_processing(int stock_availability,int stocks) {
+        if (stock_availability > stocks) {
+            Delivery_order();
+        } else {
+            Production_order();
+        }
+    }
+
+    static void Delivery_order() {
+        /* owner_name, car_model , color, fuel_type, delivery_date */
+    }
+
+    static void Production_order() {
+        /* production_branch_name, showroom_address , car_model, color, engine_type, date_of_delivery */
+    }
+
+
+}
